@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
-import { CarsListing } from './components/CarsListing';
+import { CarsListingPage } from './components/CarsListingPage';
 import store from './store/store';
 
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <CarsListing></CarsListing>
+      <CarsListingPage></CarsListingPage>
     </Provider>
   );
 }
