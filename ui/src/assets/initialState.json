@@ -1,22 +1,7 @@
 {
-"model":{
-    "cars": [
-      {
-        "stockNumber": 41400,
-        "manufacturerName": "Fiat",
-        "modelName": "Marea",
-        "mileage": {
-          "number": 100141,
-          "unit": "km"
-        },
-        "fuelType": "Diesel",
-        "color": "white",
-        "pictureUrl": "http://localhost:3001/car.svg"
-      }
-    ],
-    "totalPageCount": 2,
-    "totalCarsCount": 16
-  },
-  "colors": [],
-  "manufacturers": []
+"model": {},
+"colors": [],
+"manufacturers": [],
+"selectedPage": 1,
+"selectedCar": {}
 }

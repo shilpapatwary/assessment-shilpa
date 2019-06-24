@@ -1,0 +1,32 @@
+.dropdown__title{
+    border: 1px solid #EDEDED;
+    padding: .8rem;
+    cursor: pointer;
+    margin-top:1.2rem;
+}
+.dropdown__title.close::after{
+    content: '\25bc';
+    color:#EDEDED;
+    float:right;
+}
+.dropdown__title.open::after {
+    content: '\25b2';
+    color: #EDEDED;
+    float: right;
+}
+.dropdown__menu{
+    border: 1px solid #EDEDED;
+    margin-top:1.2rem;
+    border-radius: 0.4rem;
+}
+.dropdown__menu li{
+    padding:0.8rem;
+    border-bottom: 1px solid #EDEDED;
+}
+.dropdown__menu li:hover{
+    background-color: #EA7F28;
+    cursor: pointer;
+}
+.dropdown__menu li:last-child{
+   border-bottom: none;
+}

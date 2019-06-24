@@ -1,0 +1,40 @@
+.cars__listing{
+    width:66.5%;
+    margin-right: 2.4rem;
+}
+.cars__listing_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cars__header_title{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.4rem;
+}
+.cars__header_sort{
+    width: 36.8%;
+    margin: 2.4rem 0;
+    position:relative;
+}
+.cars__header_sort .dropdown__menu{
+    position: absolute;
+    width:100%;
+    background-color: #ffffff;
+}
+.pagination__list{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+}
+.pagination__list_item{
+    padding: 2.4rem 1.2rem;
+}
+.pagination__list_item span{
+  color: #EA7F28;
+  text-decoration: none;
+  cursor: pointer;
+}
+.pagination__list_item span:hover{
+    text-decoration: underline;
+}

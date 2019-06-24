@@ -11,8 +11,8 @@ function* watchGetManufacturersContent() {
     yield takeEvery(CarDataTypes.GET_MANUFACTURERS_CONTENT, getManufacturersContentAsync)
 }
 
-export function* getCarDetailsAsync() {
-    const data: any = yield call(getCarDetailsContent);
+export function* getCarDetailsAsync(carData: any) {
+    const data: any = yield call(getCarDetailsContent, carData.payload.id);
     yield put({type: CarDataTypes.GET_CAR_DETAILS_ASYNC, data})
 }
 
@@ -23,15 +23,15 @@ function* watchGetCarDetailsContent() {
 
 export function* getColorsContentAsync() {
     const data = yield call(getColorsContent);
-    yield put({type: CarDataTypes.GET_COLORS_CONTENT_ASYNC, data})
+    yield put({type: CarDataTypes.GET_COLORS_CONTENT_ASYNC, data});
   }
 
 function* watchGetColorsContent() {
     yield takeEvery(CarDataTypes.GET_COLORS_CONTENT, getColorsContentAsync)
   }
 
-export function* getCarsContentAsync() {
-    const data = yield call(getCarsContent);
+export function* getCarsContentAsync(filterData: any) {
+    const data = yield call(getCarsContent, filterData.payload);
     yield put({type: CarDataTypes.GET_CARS_CONTENT_ASYNC, data})
 }
 
@@ -39,9 +39,39 @@ function* watchGetCarsContent() {
     yield takeEvery(CarDataTypes.GET_CARS_CONTENT, getCarsContentAsync)
 }
 
+export function* watchApplyFiltersAsync(filterData: any) {
+    const data = yield call(getCarsContent, filterData.payload.params);
+    yield put({type: CarDataTypes.APPLY_FILTERS_ASYNC, data})
+}
+
+function* watchApplyFilters() {
+    yield takeEvery(CarDataTypes.APPLY_FILTERS, watchApplyFiltersAsync)
+}
+
+export function* watchSortMileageAsync(filterData: any) {
+    const data = yield call(getCarsContent, filterData.payload.params);
+    yield put({type: CarDataTypes.SORT_BY_MILEAGE_ASYNC, data})
+}
+
+function* watchSortMileage() {
+    yield takeEvery(CarDataTypes.SORT_BY_MILEAGE, watchSortMileageAsync)
+}
+
+export function* getCarsByPageAsync(filterData: any) {
+    const data = yield call(getCarsContent, filterData.payload.params);
+    yield put({type: CarDataTypes.GET_CARS_BY_PAGE_ASYNC, data})
+}
+
+function* watchGetCarsByPage() {
+    yield takeEvery(CarDataTypes.GET_CARS_BY_PAGE, getCarsByPageAsync)
+}
+
 export default function* root() {
     yield fork(watchGetCarsContent)
     yield fork(watchGetColorsContent)
     yield fork(watchGetManufacturersContent)
     yield fork(watchGetCarDetailsContent)
+    yield fork(watchApplyFilters)
+    yield fork(watchSortMileage)
+    yield fork(watchGetCarsByPage)
 }

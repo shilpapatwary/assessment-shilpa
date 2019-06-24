@@ -1,0 +1,33 @@
+.car__info{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ededed;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.car__info_image{
+    height:8rem;
+    width:11%;
+    background-color: #ededed;
+    text-align: center;
+}
+.car__info_image img{
+    height: 5.6rem;
+    padding: 1.2rem;
+}
+.car__info_text{
+    width:89%;
+    font-size:1.4rem;
+    padding-left: 2.4rem;
+}
+.car__info_text div{
+    padding-bottom: 0.8rem;
+}
+.car__info_text a{
+    color: #EA7F28;
+    text-decoration: none;
+}
+.car__info_text a:hover{
+    color: #EA7F28;
+    text-decoration: underline;
+}

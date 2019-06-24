@@ -1,0 +1,23 @@
+.car__details_container{
+    display:flex;
+    margin: 0 18rem;
+    font-size: 1.8rem;
+    justify-content: space-between;
+}
+
+.car__details_section{
+    width: 57%;
+}
+.car__favorites{
+    width: 30%;
+    margin-top:2.4rem;
+    border: 1px solid #ededed;
+    padding:2.4rem;
+    align-self: flex-start;
+}
+.car__favorites button{
+    float: right;
+}
+.car__details_section div{
+    margin: 2.4rem 0;
+}

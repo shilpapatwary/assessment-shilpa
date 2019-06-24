@@ -1,0 +1,16 @@
+#main{
+    display:flex;
+    flex-direction: column;
+    font-size:1.4rem;
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height:100vh;
+  }
+.main__content{
+    flex: 1;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cars__filter{
+    width:25%;
+}

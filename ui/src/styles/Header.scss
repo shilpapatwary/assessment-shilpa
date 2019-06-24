@@ -1,0 +1,23 @@
+header{
+    height:8rem;
+    display: flex;
+    justify-content: space-between;
+    font-size:18px;
+    font-family: 'Roboto';
+    border-bottom: 1px solid #EDEDED;
+    align-items: center;
+}
+.header__menu_list{
+    display: flex;
+    justify-content: space-evenly;   
+}
+.header__menu_list li{
+    cursor: pointer;
+}
+.header__menu{
+    width:25%;
+}
+.header__logo img{
+    width:50%;
+    margin-left: 2.4rem;
+}

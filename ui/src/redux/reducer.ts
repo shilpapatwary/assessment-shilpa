@@ -4,10 +4,12 @@ import { Reducer, AnyAction } from 'redux';
 const initialState: AppState = {
     model: undefined,
     colors: undefined,
-    manufacturers: undefined
+    manufacturers: undefined,
+    selectedPage: undefined,
+    selectedCar: undefined
 }
 
-const SmartCheckoutReducer: Reducer<AppState> = (currentState: AppState = initialState, action: AnyAction) => {
+const AppReducer: Reducer<AppState> = (currentState: AppState = initialState, action: AnyAction) => {
     switch(action.type) {
         case CarDataTypes.GET_CARS_CONTENT_ASYNC:
            return getCarsContentReducer(currentState, action);
@@ -17,10 +19,12 @@ const SmartCheckoutReducer: Reducer<AppState> = (currentState: AppState = initia
            return getManufacturersContentReducer(currentState, action);
         case CarDataTypes.GET_CAR_DETAILS_ASYNC:
            return getCarDetailsContentReducer(currentState, action);
-        case CarDataTypes.APPLY_FILTERS:
-           return applyFiltersReducer(currentState, action);
-        case CarDataTypes.SORT_BY_MILEAGE:
-           return SortByMileageReducer(currentState, action);
+        case CarDataTypes.APPLY_FILTERS_ASYNC:
+           return getCarsContentReducer(currentState, action);
+        case CarDataTypes.SORT_BY_MILEAGE_ASYNC:
+           return getCarsContentReducer(currentState, action);
+        case CarDataTypes.GET_CARS_BY_PAGE_ASYNC:
+            return getCarsContentReducer(currentState, action);
         default:
            return currentState;
     }
@@ -28,32 +32,28 @@ const SmartCheckoutReducer: Reducer<AppState> = (currentState: AppState = initia
 
 function getCarsContentReducer(currentState: AppState, action: AnyAction) {
     const data = action.payload || action.data;
-    return Object.assign({}, currentState, {checkoutContentList: data});
+    return Object.assign({}, currentState, {model: data});
 }
 
 function getColorsContentReducer(currentState: AppState, action: AnyAction) {
-    const data = (action.payload && action.payload.data) || action.data.data;
-    return Object.assign({}, currentState, {addressList: data});
+    const data = (action.payload && action.payload.colors) || action.data.colors;
+    return Object.assign({}, currentState, {colors: data});
 }
 
 function getManufacturersContentReducer(currentState: AppState, action: AnyAction) {
-    const data = (action.payload && action.payload.data) || action.data.data;
-    return Object.assign({}, currentState, {addressList: data});
+    const data = (action.payload && action.payload.manufacturers) || action.data.manufacturers;
+    return Object.assign({}, currentState, {manufacturers: data});
 }
 
 function getCarDetailsContentReducer(currentState: AppState, action: AnyAction) {
-    const data = (action.payload && action.payload.data) || action.data.data;
-    return Object.assign({}, currentState, {addressList: data});
+    const data = (action.payload && action.payload.car) || action.data.car;
+    return Object.assign({}, currentState, {selectedCar: data});
 }
 
-function applyFiltersReducer(currentState: AppState, action: AnyAction) {
-    const data = (action.payload && action.payload.data) || action.data.data;
-    return Object.assign({}, currentState, {addressList: data});
-}
 
 function SortByMileageReducer(currentState: AppState, action: AnyAction) {
     const data = (action.payload && action.payload.data) || action.data.data;
     return Object.assign({}, currentState, {addressList: data});
 }
 
-export default SmartCheckoutReducer;
+export default AppReducer;

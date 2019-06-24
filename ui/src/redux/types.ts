@@ -8,7 +8,11 @@ export enum CarDataTypes {
     GET_CAR_DETAILS = "@@types/GET_CAR_DETAILS",
     GET_CAR_DETAILS_ASYNC = "@@types/GET_CAR_DETAILS_ASYNC",
     APPLY_FILTERS = "@@types/APPLY_FILTERS",
-    SORT_BY_MILEAGE = "@@types/SORT_BY_MILEAGE"
+    APPLY_FILTERS_ASYNC = "@@types/APPLY_FILTERS_ASYNC",
+    SORT_BY_MILEAGE = "@@types/SORT_BY_MILEAGE",
+    SORT_BY_MILEAGE_ASYNC ="@@types/SORT_BY_MILEAGE_ASYNC",
+    GET_CARS_BY_PAGE = "@@types/GET_CARS_BY_PAGE",
+    GET_CARS_BY_PAGE_ASYNC = "@@types/GET_CARS_BY_PAGE_ASYNC"
 }
 
 export interface mileageContent{
@@ -16,7 +20,7 @@ export interface mileageContent{
     unit: String
 
 }
-export interface carData{
+export interface CarData{
     stockNumber : Number,
     manufacturerName : String,
     modelName : String,
@@ -26,7 +30,7 @@ export interface carData{
     pictureUrl : String
 }
 export interface ModelData{
-    cars? : carData[],
+    cars? : CarData[],
     totalPageCount? : Number,
     totalCarsCount? : Number
 }
@@ -34,5 +38,7 @@ export interface ModelData{
 export interface AppState{
     model? : ModelData,
     colors?: Array<String>,
-    manufacturers? : Array<String>
+    manufacturers? : Array<String>,
+    selectedPage? : Number,
+    selectedCar?: CarData
 }
