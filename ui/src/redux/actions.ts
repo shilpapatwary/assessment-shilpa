@@ -22,3 +22,4 @@ export const sortByMileageAsync = (data: any) => action(CarDataTypes.SORT_BY_MIL
 export const getCarsByPage = (params: any) => action(CarDataTypes.GET_CARS_BY_PAGE, {params});
 export const getCarsByPageAsync = (data: any) => action(CarDataTypes.GET_CARS_BY_PAGE_ASYNC, {data});
 
+export const requestFailed = (error: any) => action(CarDataTypes.REQUEST_FAILED, error);

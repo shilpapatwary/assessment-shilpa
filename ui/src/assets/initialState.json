@@ -3,5 +3,6 @@
 "colors": [],
 "manufacturers": [],
 "selectedPage": 1,
-"selectedCar": {}
+"selectedCar": {},
+"hasError": false
 }

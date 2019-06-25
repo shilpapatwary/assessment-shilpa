@@ -1,8 +1,6 @@
 import React from 'react';
 import { Dropdown } from './Dropdown';
 import '../styles/FilterCars.scss';
-import { any } from 'prop-types';
-
 interface FilterCarProps{
    colors: Array<String>,
    manufacturers: any,

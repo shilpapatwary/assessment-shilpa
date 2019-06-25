@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {Dispatch} from 'redux';
 import { AppState } from '../redux/types';
 import { getCarsContent, getColorsContent, getManufacturersContent, applyFilters, sortByMileage, getCarsByPage} from '../redux/actions';
-
+import Loading from './Loading';
 import  Header  from './Header';
 import  Footer  from './Footer';
 import { FilterCars } from './FilterCars';
@@ -84,8 +84,8 @@ class CarsListingPage extends React.Component<CarListingProps, any>{
             <div id="main">
                 <Header></Header>
                 <section className="main__content">
-                    { this.props.colors && this.props.manufacturers && <FilterCars colors={this.props.colors} manufacturers={this.props.manufacturers} filterCars={this.applyFilters}></FilterCars>}
-                    <CarsListing model={this.props.model} currentPage={this.state.currentPage} sortByMileage={this.sortByMileage} getCarsByPage={this.getCarsByPage}></CarsListing>
+                    { this.props.colors.length > 0 && this.props.manufacturers.length > 0 && <FilterCars colors={this.props.colors} manufacturers={this.props.manufacturers} filterCars={this.applyFilters}></FilterCars>}
+                    {Object.keys(this.props.model).length > 0 ? <CarsListing model={this.props.model} currentPage={this.state.currentPage} sortByMileage={this.sortByMileage} getCarsByPage={this.getCarsByPage}></CarsListing> :  <Loading></Loading>}
                 </section>
                 <Footer></Footer>
             </div>

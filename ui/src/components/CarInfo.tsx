@@ -15,7 +15,7 @@ const CarInfo = (props: CarInfoProps) => {
             <div className="car__info_text">
                     <div className="heading__bold">{props.car.manufacturerName} {props.car.modelName}</div>
                     <div>Stock #{props.car.stockNumber} - {props.car.mileage.number}{props.car.mileage.unit} - {props.car.fuelType} - {props.car.color}</div>
-                    <a href={productPageUrl} target="_blank">View details</a>
+                    <a href={productPageUrl} target="_blank" rel="noopener noreferrer">View details</a>
             </div>
        </div>
     )

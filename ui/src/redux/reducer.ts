@@ -6,7 +6,8 @@ const initialState: AppState = {
     colors: undefined,
     manufacturers: undefined,
     selectedPage: undefined,
-    selectedCar: undefined
+    selectedCar: undefined,
+    hasError: undefined
 }
 
 const AppReducer: Reducer<AppState> = (currentState: AppState = initialState, action: AnyAction) => {
@@ -25,6 +26,8 @@ const AppReducer: Reducer<AppState> = (currentState: AppState = initialState, ac
            return getCarsContentReducer(currentState, action);
         case CarDataTypes.GET_CARS_BY_PAGE_ASYNC:
             return getCarsContentReducer(currentState, action);
+        case CarDataTypes.REQUEST_FAILED:
+            return requestFailedReducer(currentState, action)
         default:
            return currentState;
     }
@@ -50,10 +53,8 @@ function getCarDetailsContentReducer(currentState: AppState, action: AnyAction) 
     return Object.assign({}, currentState, {selectedCar: data});
 }
 
-
-function SortByMileageReducer(currentState: AppState, action: AnyAction) {
-    const data = (action.payload && action.payload.data) || action.data.data;
-    return Object.assign({}, currentState, {addressList: data});
+function requestFailedReducer(currentState: AppState, action: AnyAction) {
+    return Object.assign({}, currentState, {hasError: true});
 }
 
 export default AppReducer;

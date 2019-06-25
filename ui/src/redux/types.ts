@@ -12,7 +12,8 @@ export enum CarDataTypes {
     SORT_BY_MILEAGE = "@@types/SORT_BY_MILEAGE",
     SORT_BY_MILEAGE_ASYNC ="@@types/SORT_BY_MILEAGE_ASYNC",
     GET_CARS_BY_PAGE = "@@types/GET_CARS_BY_PAGE",
-    GET_CARS_BY_PAGE_ASYNC = "@@types/GET_CARS_BY_PAGE_ASYNC"
+    GET_CARS_BY_PAGE_ASYNC = "@@types/GET_CARS_BY_PAGE_ASYNC",
+    REQUEST_FAILED = '@@types/REQUEST_FAILED'
 }
 
 export interface mileageContent{
@@ -40,5 +41,6 @@ export interface AppState{
     colors?: Array<String>,
     manufacturers? : Array<String>,
     selectedPage? : Number,
-    selectedCar?: CarData
+    selectedCar?: CarData,
+    hasError?: Boolean
 }

@@ -5,6 +5,7 @@ import  CarsListingPage  from './components/CarsListingPage';
 import store from './store/store';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import CarProductPage from './components/CarProductPage';
+import ErrorPage from './components/ErrorPage';
 
 const App: React.FC = () => {
   return (
@@ -12,7 +13,8 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={CarsListingPage}/>
-        <Route exact path="/product/:id" component={CarProductPage}/>
+        <Route path="/product/:id" component={CarProductPage}/>
+        <Route path="/error" component={ErrorPage}/>
       </Switch>
     </BrowserRouter>
     </Provider>

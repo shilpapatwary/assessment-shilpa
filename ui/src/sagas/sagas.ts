@@ -12,8 +12,14 @@ function* watchGetManufacturersContent() {
 }
 
 export function* getCarDetailsAsync(carData: any) {
-    const data: any = yield call(getCarDetailsContent, carData.payload.id);
-    yield put({type: CarDataTypes.GET_CAR_DETAILS_ASYNC, data})
+    try{
+        const data: any = yield call(getCarDetailsContent, carData.payload.id);
+        yield put({type: CarDataTypes.GET_CAR_DETAILS_ASYNC, data})
+    } catch(error){
+        console.log("caught error", error);
+        yield put({ type: CarDataTypes.REQUEST_FAILED, error });
+    }
+    
 }
 
 function* watchGetCarDetailsContent() {

@@ -1,0 +1,22 @@
+.car__info_loading{
+    display: flex;
+}
+.loading__section{
+    width:45%;
+    margin: 2.4rem;
+    display:flex;
+}
+.loading__text div{
+    background-color: #ededed;
+    margin-bottom:0.8rem;
+    height:1rem;
+    width: 40%;
+}
+.loading__text div:last-child{
+    width: 12%;
+}
+
+.loading__text div:first-child{
+    height: 2.4rem;
+}
+

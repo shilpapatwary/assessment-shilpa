@@ -8,6 +8,50 @@ interface CarDetailsProps{
 export class CarDetails extends React.Component<CarDetailsProps, any>{
     constructor(props: CarDetailsProps) {
         super(props);
+        this.state = {
+            isFavourite: false
+        }
+        this.addToFavs = this.addToFavs.bind(this);
+        this.removeFromFavs = this.removeFromFavs.bind(this);
+    }
+
+    removeFromFavs() {
+        let favsList = localStorage.getItem('favsList');
+        if(favsList){
+            let favsListArr = favsList === '' ? favsList.split('') : favsList.split(',');
+            let index = favsListArr.findIndex((stockNum) => {
+                return stockNum === `${this.props.car.stockNumber}`
+            });
+            favsListArr.splice(index, 1);
+            localStorage.setItem('favsList', favsListArr.join(','));
+            this.setState({
+                isFavourite: false
+            })
+        }
+    }
+
+    addToFavs() {
+        let favsList = localStorage.getItem('favsList');
+        if(favsList || favsList === ''){
+            let favsListArr = favsList === '' ? favsList.split('') : favsList.split(',');
+            favsListArr.push(`${this.props.car.stockNumber}`);
+            localStorage.setItem('favsList', favsListArr.join(','));
+            this.setState({
+                isFavourite: true
+            })
+        }
+    }
+
+    componentDidMount() {
+        let favsList = localStorage.getItem('favsList');
+        if(favsList || favsList === ''){
+            let favsListArr =  favsList === '' ? favsList.split('') : favsList.split(',');
+            if(favsListArr.includes(`${this.props.car.stockNumber}`)){
+                this.setState({
+                    isFavourite: true
+                });
+            }
+        }
     }
 
     render(){
@@ -23,7 +67,7 @@ export class CarDetails extends React.Component<CarDetailsProps, any>{
                         <div className="cars__favorites_text">
                             <span>If you like this car, click the button and save it in your collection of favourite items.</span>
                         </div>
-                        <button>Save</button>
+                        {this.state.isFavourite ? <button onClick={this.removeFromFavs}>Remove</button> : <button onClick={this.addToFavs}>Save</button>}
                     </div>
                 </section>
             </section>
