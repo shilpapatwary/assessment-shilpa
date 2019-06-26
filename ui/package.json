@@ -42,5 +42,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/chai-spies": "^1.0.0",
+    "@types/enzyme": "^3.9.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/sinon": "^7.0.13",
+    "chai-spies": "^1.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "sinon": "^7.3.2"
   }
 }

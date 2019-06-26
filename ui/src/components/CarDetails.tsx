@@ -5,7 +5,7 @@ import '../styles/CarDetails.scss';
 interface CarDetailsProps{
     car: CarData
 }
-export class CarDetails extends React.Component<CarDetailsProps, any>{
+export default class CarDetails extends React.Component<CarDetailsProps, any>{
     constructor(props: CarDetailsProps) {
         super(props);
         this.state = {

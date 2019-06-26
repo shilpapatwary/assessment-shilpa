@@ -1,17 +1,17 @@
 import { action } from 'typesafe-actions';
-import { CarDataTypes, AppState } from './types';
+import { CarDataTypes, ModelData} from './types';
 
 export const getCarsContent = (data: any) => action(CarDataTypes.GET_CARS_CONTENT, data);
-export const getCarsContentAsync = (data: AppState ) => action(CarDataTypes.GET_CARS_CONTENT_ASYNC, data);
+export const getCarsContentAsync = (data: ModelData ) => action(CarDataTypes.GET_CARS_CONTENT_ASYNC, data);
 
 export const getColorsContent = () => action(CarDataTypes.GET_COLORS_CONTENT);
-export const getColorsContentAsync = (data: any ) => action(CarDataTypes.GET_COLORS_CONTENT, data);
+export const getColorsContentAsync = (data: any ) => action(CarDataTypes.GET_COLORS_CONTENT_ASYNC, data);
 
 export const getManufacturersContent = () => action(CarDataTypes.GET_MANUFACTURERS_CONTENT);
 export const getManufacturersAsync = (data: any ) => action(CarDataTypes.GET_MANUFACTURERS_CONTENT_ASYNC, data);
 
 export const getCarDetails = (data: any) => action(CarDataTypes.GET_CAR_DETAILS, data);
-export const getCarDetailsContent = (data: any) => action(CarDataTypes.GET_CAR_DETAILS_ASYNC, data);
+export const getCarDetailsAsync = (data: any) => action(CarDataTypes.GET_CAR_DETAILS_ASYNC, data);
 
 export const applyFilters = (params: any) => action(CarDataTypes.APPLY_FILTERS, {params});
 export const applyFiltersAsync = (data: any) => action(CarDataTypes.APPLY_FILTERS_ASYNC, data);

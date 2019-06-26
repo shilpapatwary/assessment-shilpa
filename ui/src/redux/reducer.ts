@@ -39,17 +39,17 @@ function getCarsContentReducer(currentState: AppState, action: AnyAction) {
 }
 
 function getColorsContentReducer(currentState: AppState, action: AnyAction) {
-    const data = (action.payload && action.payload.colors) || action.data.colors;
+    const data = action.payload || action.data && action.data.colors;
     return Object.assign({}, currentState, {colors: data});
 }
 
 function getManufacturersContentReducer(currentState: AppState, action: AnyAction) {
-    const data = (action.payload && action.payload.manufacturers) || action.data.manufacturers;
+    const data = action.payload || action.data.manufacturers;
     return Object.assign({}, currentState, {manufacturers: data});
 }
 
 function getCarDetailsContentReducer(currentState: AppState, action: AnyAction) {
-    const data = (action.payload && action.payload.car) || action.data.car;
+    const data = action.payload || action.data.car;
     return Object.assign({}, currentState, {selectedCar: data});
 }
 

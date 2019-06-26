@@ -1,6 +1,7 @@
 import React from 'react';
 import  Header  from './Header';
-import { CarDetails } from './CarDetails';
+const CarDetails = React.lazy(() => import('./CarDetails'));
+//import { CarDetails } from './CarDetails';
 import '../styles/CarProductPage.scss';
 import {AppState } from '../redux/types';
 import { Dispatch } from 'redux';

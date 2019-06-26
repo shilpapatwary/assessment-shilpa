@@ -39,9 +39,9 @@ export class Pagination extends React.Component<PaginationProps, any>{
         return(
             <ul className="pagination__list">
                         {this.props.currentPage > 1 && <li className="pagination__list_item" onClick={this.getCarsByPage}><span>First</span></li>}
-                        {this.props.currentPage > 1 && <li className="pagination__list_item" onClick={this.getCarsByPage}><span>Previous</span></li>}
+                        {this.props.currentPage > 1 && <li className="pagination__list_item previous" onClick={this.getCarsByPage}><span>Previous</span></li>}
                         <li className="pagination__list_item">Page {this.props.currentPage} of {this.props.pagesCount}</li>
-                        {this.props.currentPage < this.props.pagesCount && <li className="pagination__list_item" onClick={this.getCarsByPage}><span>Next</span></li>}
+                        {this.props.currentPage < this.props.pagesCount && <li className="pagination__list_item next" onClick={this.getCarsByPage}><span>Next</span></li>}
                         {this.props.currentPage < this.props.pagesCount && <li className="pagination__list_item" onClick={this.getCarsByPage}><span>Last</span></li>}
             </ul>
         );
