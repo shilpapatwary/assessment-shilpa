@@ -1,7 +1,6 @@
-import Enzyme, { shallow, mount } from 'enzyme';
+import Enzyme, {  mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import * as React from 'react';
-import sinon from 'sinon';
 import CarDetails  from './CarDetails';
 import { sampleCarData } from '../assets/testData';
 import chai from 'chai';

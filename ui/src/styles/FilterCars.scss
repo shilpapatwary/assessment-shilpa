@@ -10,10 +10,18 @@
     border:1px solid #EDEDED;
     padding: 2.4rem;
     height: fit-content;
+    width:25%;
 }
 .cars__filter_item{
     margin-bottom:1.2rem;
 }
 .car__filter_button{
     float: right;
+}
+@media only screen and (max-width: 720px) {
+    .cars__filter{
+        width:76%;
+        margin: 7%;
+        padding: 7%;
+    }
 }

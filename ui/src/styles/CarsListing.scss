@@ -38,3 +38,18 @@
 .pagination__list_item span:hover{
     text-decoration: underline;
 }
+@media only screen and (max-width: 720px) {
+    .cars__listing{
+        width: 87%;
+        margin: 7%;
+    }
+    .cars__listing_header{
+        flex-direction: column;
+    }
+    .cars__header_sort{
+        width:100%;
+    }
+    .cars__header_title{
+        margin-top:0;
+    }
+}

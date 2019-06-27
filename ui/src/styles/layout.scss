@@ -11,6 +11,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.cars__filter{
-    width:25%;
+
+@media only screen and (max-width: 720px) {
+    .main__content{
+        flex-direction: column;
+    }
 }

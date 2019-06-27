@@ -31,3 +31,13 @@
     color: #EA7F28;
     text-decoration: underline;
 }
+@media only screen and (max-width: 720px) {
+   .car__info_image{
+        width: 31%;
+   }
+}
+@media only screen and (min-width: 720px) and (max-width: 1024px) {
+    .car__info_image{
+         width: 25%;
+    }
+ }

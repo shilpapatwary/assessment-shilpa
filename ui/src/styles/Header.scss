@@ -17,7 +17,24 @@ header{
 .header__menu{
     width:25%;
 }
+.header__logo{
+    width:23.5%;
+}
 .header__logo img{
     width:50%;
     margin-left: 2.4rem;
+}
+
+@media only screen and (max-width: 720px) {
+    .header__logo img{
+        width: 83%;
+    }
+    .header__logo{
+        width: 38.5%;
+    }
+    .header__menu{
+        width: 50%;
+        font-size: 18px;
+        margin-right: 2.4rem;
+    }
 }

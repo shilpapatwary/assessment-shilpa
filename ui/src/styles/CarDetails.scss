@@ -22,3 +22,25 @@
 .car__details_section div{
     margin: 2.4rem 0;
 }
+@media only screen and (max-width: 720px) {
+    .car__details_container{
+        flex-direction: column;
+        margin:7%;
+        width:86%;
+    }
+    .car__details_section{
+        width:100%;
+    }
+    .car__favorites{
+        width:86%;
+    }
+}
+@media only screen and (min-width: 720px) and (max-width: 1024px) {
+    .car__details_container{
+        margin: 0 11rem 80rem;
+        width: 72%;
+    }
+    .car__details_section{
+        width: 50%;
+    }
+ }
