@@ -1,14 +1,13 @@
 import React from 'react';
-import  Header  from './Header';
-//const CarDetails = React.lazy(() => import('./CarDetails'));
-import CarDetails  from './CarDetails';
+import  Header  from '../components/Header';
+import CarDetails  from '../components/CarDetails';
 import '../styles/CarProductPage.scss';
 import {AppState } from '../redux/types';
 import { Dispatch } from 'redux';
 import { getCarDetails } from '../redux/actions';
 import { connect } from 'react-redux';
-import Footer from './Footer';
-import ErrorPage  from './ErrorPage';
+import Footer from '../components/Footer';
+import ErrorPage  from '../components/ErrorPage';
 
 class CarProductPage extends React.Component<any, any> {
     componentDidMount() {

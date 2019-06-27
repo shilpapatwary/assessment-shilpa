@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.scss';
 import { Provider } from 'react-redux';
-import  CarsListingPage  from './components/CarsListingPage';
+import AsyncComponent from './components/AsyncComponent';
 import store from './store/store';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import CarProductPage from './components/CarProductPage';
-import ErrorPage from './components/ErrorPage';
+
+const CarsListingPage = AsyncComponent(() => import("./containers/CarsListingPage"));
+const CarProductPage = AsyncComponent(() => import("./containers/CarProductPage"));
+const ErrorPage = AsyncComponent(() => import("./components/ErrorPage"));
 
 const App: React.FC = () => {
   return (
@@ -14,7 +16,7 @@ const App: React.FC = () => {
       <Switch>
         <Route exact path="/" component={CarsListingPage}/>
         <Route path="/product/:id" component={CarProductPage}/>
-        <Route path="/error" component={ErrorPage}/>
+        <Route component={ErrorPage}/>
       </Switch>
     </BrowserRouter>
     </Provider>

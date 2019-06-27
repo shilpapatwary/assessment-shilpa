@@ -8,7 +8,7 @@ import { AnyAction, createStore } from 'redux';
 import { sampleCarData } from '../assets/testData';
 
 import CarsListingPage from './CarsListingPage';
-import CarInfo from './CarInfo';
+import CarInfo from '../components/CarInfo';
 import initialState from '../redux/test/initialState.json';
 import { CarDataTypes } from '../redux/types';
 

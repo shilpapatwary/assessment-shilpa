@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import {Dispatch} from 'redux';
 import { AppState } from '../redux/types';
 import { getCarsContent, getColorsContent, getManufacturersContent, applyFilters, sortByMileage, getCarsByPage} from '../redux/actions';
-import Loading from './Loading';
-import  Header  from './Header';
-import  Footer  from './Footer';
-import { FilterCars } from './FilterCars';
-import { CarsListing } from './CarsListing';
+import Loading from '../components/Loading';
+import  Header  from '../components/Header';
+import  Footer  from '../components/Footer';
+import { FilterCars } from '../components/FilterCars';
+import { CarsListing } from '../components/CarsListing';
 import '../styles/layout.scss';
 
 interface CarListingProps{
