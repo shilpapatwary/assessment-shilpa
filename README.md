@@ -2,12 +2,12 @@
 
 ## To start the app run 
 #### npm install
-#### cd ui / npm install
-#### cd ui / npm run build
+#### cd ui/npm install
+#### cd ui/npm run build
 #### npm start
 
 ## To run tests
-#### npm test
+#### de ui/npm test
 
 ***
 
