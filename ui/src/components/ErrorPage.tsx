@@ -6,7 +6,7 @@ import '../styles/ErrorPage.scss';
 
 const  ErrorPage  = () => {
         return (
-            <div id="main">
+            <div id="main" className="error__main">
                 <Header></Header>
                 <section className="error__section main__content">
                     <div className="auto1__logo"><img src={logo} alt="logo" /></div>

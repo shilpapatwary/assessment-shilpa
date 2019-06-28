@@ -32,10 +32,9 @@ export  class CarsListing extends React.Component<CarsListingProps, any>{
        this.props.sortByMileage(selectedSort);
    }
 
-  
     render() {
         const sortOptions = ['Mileage - Ascending', 'Mileage - Descending'];
-        const carCountInPage = this.props.model.totalCarsCount && (this.props.model.totalCarsCount > 10) ? 10 : this.props.model.totalCarsCount;
+        const carCountInPage = this.props.model.cars && this.props.model.cars.length;
         return(
             <section className="cars__listing">
                 <div className="cars__listing_header">
@@ -54,7 +53,6 @@ export  class CarsListing extends React.Component<CarsListingProps, any>{
                         return <CarInfo key={index}car={car}></CarInfo>
                     })
                 }
-                    
                 </div>
                 <div className="cars__listing_pagination">
                    {this.props.model &&  <Pagination currentPage={this.props.currentPage} pagesCount={this.props.model.totalPageCount} getCarsByPage={this.props.getCarsByPage}></Pagination>}

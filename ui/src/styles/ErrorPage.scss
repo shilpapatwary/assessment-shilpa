@@ -4,6 +4,7 @@
     font-size: 18px;
     align-items: center;
     justify-content: center;
+    flex: 1;
 }
 .auto1__logo img{
     width:50%;
@@ -13,4 +14,9 @@
 }
 .error__text div{
     margin:2.4rem 0;
+}
+.error__main{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
 }

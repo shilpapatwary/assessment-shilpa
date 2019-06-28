@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .custom-select{
     width:200px;
     position: relative;
@@ -7,13 +9,13 @@
 }
 .cars__filter{
     margin:2.4rem;
-    border:1px solid #EDEDED;
-    padding: 2.4rem;
+    border:1px solid $primary-color;
+    padding: $space-large;
     height: fit-content;
     width:25%;
 }
 .cars__filter_item{
-    margin-bottom:1.2rem;
+    margin-bottom: $space-medium;
 }
 .car__filter_button{
     float: right;

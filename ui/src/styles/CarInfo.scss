@@ -1,9 +1,11 @@
+@import './variables.scss';
+
 .car__info{
     display: flex;
     justify-content: space-between;
     border: 1px solid #ededed;
-    padding: 1.2rem;
-    margin-bottom: 1.2rem;
+    padding: $space-medium;
+    margin-bottom: $space-medium;
 }
 .car__info_image{
     height:8rem;
@@ -13,22 +15,22 @@
 }
 .car__info_image img{
     height: 5.6rem;
-    padding: 1.2rem;
+    padding: $space-medium;
 }
 .car__info_text{
     width:89%;
     font-size:1.4rem;
-    padding-left: 2.4rem;
+    padding-left: $space-large;
 }
 .car__info_text div{
-    padding-bottom: 0.8rem;
+    padding-bottom: $space-small;
 }
 .car__info_text a{
-    color: #EA7F28;
+    color: $secondary-color;
     text-decoration: none;
 }
 .car__info_text a:hover{
-    color: #EA7F28;
+    color: $secondary-color-dark;
     text-decoration: underline;
 }
 @media only screen and (max-width: 720px) {

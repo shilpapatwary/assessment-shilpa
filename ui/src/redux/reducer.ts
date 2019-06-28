@@ -5,7 +5,6 @@ const initialState: AppState = {
     model: undefined,
     colors: undefined,
     manufacturers: undefined,
-    selectedPage: undefined,
     selectedCar: undefined,
     hasError: undefined
 }
@@ -25,9 +24,9 @@ const AppReducer: Reducer<AppState> = (currentState: AppState = initialState, ac
         case CarDataTypes.SORT_BY_MILEAGE_ASYNC:
            return getCarsContentReducer(currentState, action);
         case CarDataTypes.GET_CARS_BY_PAGE_ASYNC:
-            return getCarsContentReducer(currentState, action);
+           return getCarsContentReducer(currentState, action);
         case CarDataTypes.REQUEST_FAILED:
-            return requestFailedReducer(currentState, action)
+           return requestFailedReducer(currentState, action)
         default:
            return currentState;
     }

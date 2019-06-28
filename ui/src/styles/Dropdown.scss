@@ -1,27 +1,29 @@
+@import './variables.scss';
+
 .dropdown__title{
     border: 1px solid #EDEDED;
-    padding: .8rem;
+    padding: $space-small;
     cursor: pointer;
-    margin-top:1.2rem;
+    margin-top: $space-medium;
 }
 .dropdown__title.close::after{
     content: '\25bc';
-    color:#EDEDED;
+    color: $primary-color;
     float:right;
 }
 .dropdown__title.open::after {
     content: '\25b2';
-    color: #EDEDED;
+    color: $primary-color;
     float: right;
 }
 .dropdown__menu{
-    border: 1px solid #EDEDED;
-    margin-top:1.2rem;
+    border: 1px solid $primary-color;
+    margin-top: $space-medium;
     border-radius: 0.4rem;
 }
 .dropdown__menu li{
-    padding:0.8rem;
-    border-bottom: 1px solid #EDEDED;
+    padding: $space-small;
+    border-bottom: 1px solid $primary-color;
 }
 .dropdown__menu li:hover{
     background-color: #EA7F28;

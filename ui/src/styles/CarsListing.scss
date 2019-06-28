@@ -1,6 +1,8 @@
+@import './variables.scss';
+
 .cars__listing{
     width:66.5%;
-    margin-right: 2.4rem;
+    margin-right: $space-large;
 }
 .cars__listing_header{
     display: flex;
@@ -10,11 +12,11 @@
 .cars__header_title{
     display: flex;
     flex-direction: column;
-    margin-top: 2.4rem;
+    margin-top: $space-large;
 }
 .cars__header_sort{
     width: 36.8%;
-    margin: 2.4rem 0;
+    margin: $space-large 0;
     position:relative;
 }
 .cars__header_sort .dropdown__menu{
@@ -28,10 +30,10 @@
     justify-content: center;
 }
 .pagination__list_item{
-    padding: 2.4rem 1.2rem;
+    padding: $space-large $space-medium;
 }
 .pagination__list_item span{
-  color: #EA7F28;
+  color: $secondary-color;
   text-decoration: none;
   cursor: pointer;
 }
