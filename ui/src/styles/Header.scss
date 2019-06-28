@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 header{
     height:8rem;
     display: flex;
@@ -22,7 +24,7 @@ header{
 }
 .header__logo img{
     width:50%;
-    margin-left: 2.4rem;
+    margin-left: $space-large;
 }
 
 @media only screen and (max-width: 720px) {
@@ -35,6 +37,6 @@ header{
     .header__menu{
         width: 50%;
         font-size: 18px;
-        margin-right: 2.4rem;
+        margin-right: $space-large;
     }
 }

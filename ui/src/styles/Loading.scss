@@ -1,14 +1,16 @@
+@import './variables.scss';
+
 .car__info_loading{
     display: flex;
 }
 .loading__section{
     width:45%;
-    margin: 2.4rem;
+    margin: $space-large;
     display:flex;
 }
 .loading__text div{
     background-color: #ededed;
-    margin-bottom:0.8rem;
+    margin-bottom: $space-small;
     height:1rem;
     width: 40%;
 }
@@ -17,6 +19,6 @@
 }
 
 .loading__text div:first-child{
-    height: 2.4rem;
+    height: $space-large;
 }
 

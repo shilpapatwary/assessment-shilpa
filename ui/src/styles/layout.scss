@@ -1,7 +1,9 @@
+@import './variables.scss';
+
 #main{
     display:flex;
     flex-direction: column;
-    font-size:1.4rem;
+    font-size: $font-medium;
     font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height:100vh;
   }
